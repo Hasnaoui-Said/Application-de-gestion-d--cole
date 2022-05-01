@@ -1,0 +1,62 @@
+@import url('varSheet.css');
+
+html, body{
+    width: 100%;
+    height: 100%;
+    font-size: 17px;
+    line-height: 22px;
+    color: var(--main-text-color);
+    background: var(--bg-color-blanchedalmond);
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.side__bar{
+    background: var(--bg-color-side);
+    width: var(--width-side-bar);
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+    overflow: auto;
+    z-index: 9;
+}
+.nav__bar{
+    height: var(--height-nav-bar);
+    top: 0;
+    left: var(--width-side-bar);
+    width: calc(100% - var(--width-side-bar));
+    position: fixed;
+    border-bottom: #9393933d .01px solid;
+    z-index: 8;
+}
+main{
+    position: absolute;
+    top: var(--height-nav-bar);
+    left: var(--width-side-bar);
+    width: calc(100% - var(--width-side-bar));
+}
+.logo{
+    border-bottom: #9393933d .01px solid;
+    margin-bottom: 7px;
+}
+.side__bar nav ul li a{
+    color: var(--main-text-color);
+}
+.link__active{
+    background-color: var(--main-border-blanchedalmond);
+    border-radius: 0 20px 20px 0;
+}
+.link__active a span{
+    color: black;
+}
+.side__bar nav .nav-item:hover{
+    background-color: var(--main-border-blanchedalmond);
+    color: #000;
+    border-radius: 0 20px 20px 0;
+}
+.pointer{
+    cursor: pointer;
+}
