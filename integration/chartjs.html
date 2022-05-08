@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 600px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const myChart = new Chart(
+            document.getElementById('myChart'),
+            {
+                type: 'bar',
+                data: {
+                    labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+                    datasets: [
+                        {
+                            label: 'Nombre de votes',
+                            backgroundColor: ['red', 'green', 'yellow', 'blue', 'purpole', 'orange'],
+                            borderColor: 'white',
+                            data: [0, 10, 5, 2, 20, 30, 45],
+                        },
+                        // {
+                        //     label: 'Nombre de j\'aime',
+                        //     backgroundColor: 'green',
+                        //     borderColor: 'green',
+                        //     data: [1, 11, 5, 3, 31, 21, 45],
+                        // }
+                    ]
+                },
+                options: {
+                        legend: {
+                            // display: false,
+                            position: 'bottom'
+                        }
+                    // scales: {
+                    //     y: {
+                    //         beginAtZero: true
+                    //     }
+                    // }
+
+                }
+            }
+        );
+    </script>
+
+</body>
+
+</html>

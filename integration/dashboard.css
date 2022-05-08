@@ -1,0 +1,185 @@
+@import url('varSheet.css');
+
+html, body{
+    width: 100%;
+    height: 100%;
+    font-size: 17px;
+    line-height: 22px;
+    color: var(--main-text-color);
+    background: var(--bg-color-blanchedalmond);
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.side__bar{
+    background: var(--bg-color-side);
+    width: var(--width-side-bar);
+    transition-timing-function: ease-in-out;
+    transition: width .4s;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+    overflow: auto;
+    z-index: 9;
+}
+.nav__bar{
+    height: var(--height-nav-bar);
+    top: 0;
+    left: var(--width-side-bar);
+    width: calc(100% - var(--width-side-bar));
+    position: fixed;
+    background: var(--bg-color-blanchedalmond);
+    border-bottom: var(--main-text-color) .01px solid;
+    transition-timing-function: ease-in-out;
+    transition: width .4s;
+    z-index: 8;
+}
+.main{
+    position: absolute;
+    top: var(--height-nav-bar);
+    left: var(--width-side-bar);
+    width: calc(100% - var(--width-side-bar));
+    transition-timing-function: ease-in-out;
+    transition: width .4s;
+}
+
+.side__bar.active{
+    width: 72px;transition-timing-function: ease-in-out;
+    transition: width .4s;
+}
+.side__bar .logo-1{
+    display: block;
+    transition-timing-function: ease-in;
+    transition: width .4s;
+}
+.side__bar.active .logo-1{
+        transition-timing-function: ease-in-out;
+        transition: width .4s;
+    display: none;
+}
+.side__bar .logo-2{
+    transition-timing-function: ease-in-out;
+    transition: width .4s;
+    display: none;
+}
+.side__bar.active .logo-2{
+    transition-timing-function: ease-in-out;
+    transition: width .4s;
+    display: flex;
+    height: 144px;
+}
+.side__bar.active ul li a span{
+    transition-timing-function: ease-in-out;
+    transition: width .4s;
+    display: none;
+}
+.nav__bar.active,
+.main.active{
+    transition-timing-function: ease-in-out;
+    transition: width .4s;
+    width: calc(100% - 72px);
+    left: 72px;
+}
+.logo{
+    border-bottom: var(--main-text-color) .01px solid;
+    margin-bottom: 7px;
+}
+.side__bar nav ul li{
+    height: 47px;
+}
+.side__bar nav ul li a{
+    color: var(--main-text-color);
+}
+.link__active{
+    background-color: var(--main-border-blanchedalmond);
+    border-radius: 0 20px 20px 0;
+}
+.side__bar.active .link__active{
+    background-color: var(--main-border-blanchedalmond);
+    border-radius: 0 12px 12px 0;
+}
+.side__bar .link__active a span{
+    color: var(--main-text-color);
+}
+.side__bar nav .nav-item:hover{
+    background-color: var(--main-border-blanchedalmond);
+    color: var(--main-text-color);
+    border-radius: 0 20px 20px 0;
+}
+.side__bar nav .nav-item:hover a{
+    color: var(--main-text-color);
+}
+.pointer{
+    cursor: pointer;
+}
+.carte>div{
+    margin-bottom: 10px;
+}
+.carte>div>.item{
+    background: var(--bg-color-side);
+    border-radius: 10px;
+}
+.carte .item-1{
+    border-left: var(--main-border-blue) 10px solid;
+}
+.carte .item-2{
+    border-left: var(--main-border-blanchedalmond) 10px solid;
+}
+.carte .item-3{
+    border-left: var(--main-border-green) 10px solid;
+}
+.carte .item-4{
+    border-left: var(--main-border-red) 10px solid;
+}
+.carte .view{
+    color: var(--main-border-green-opp);
+    background: #dff0d8;
+    border: 1px solid #dff0d8;
+}
+.carte .view:hover{
+    color: var(--main-border-green-opp);
+    background: var(--bg-color-blanchedalmond);
+    border-color: var(--main-border-green-opp);
+}
+
+@media only screen and (max-width: 920px) {
+    .side__bar{
+        left: -5000px;
+    }
+    .side__bar.active{
+        left: 0;
+        width: var(--width-side-bar);
+    }
+    .side__bar.active ul li a span{
+        display: block;
+    }
+    .nav__bar.active{
+        left: var(--width-side-bar);
+        width: calc(100% - var(--width-side-bar));
+    }
+    .nav__bar,
+    .main.active,
+    .main{
+        width: 100%;
+        left: 0;
+    }
+    .side__bar .logo-1{
+        display: block !important;
+    }
+    .side__bar .logo-2{
+        display: none !important;
+    }
+  }
+  
+@media only screen and (max-width: 720px) { 
+    .nav__bar .adminName span,
+    .nav__bar.active .item-admin a{
+        display: none;
+    }
+}
+.chart canvas{
+    background: var(--bg-color-side);   
+}
