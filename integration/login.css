@@ -1,0 +1,22 @@
+body{
+    background-image: url(image/pexels-tirachard-kumtanom-733852.jpg);
+    background-size: cover;
+    background-repeat: space;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #F3F4F6;
+    color: #707070;
+}
+#logo{
+    width: 30%;
+}
+.row > div{
+    background-color: white;
+    border: 1px solid #b3b3b3;
+    padding: 40px;
+}
+p{
+    font-size: 28px;
+}
+#forget{
+    color: black;
+}
