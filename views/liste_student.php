@@ -24,9 +24,9 @@
         <div class="Container p-4 ">
             <div class="d-flex justify-content-between border-bottom fw-bold fs-4">
                 <p class="">Listes des étudiants</p>
-                <button class="btn btn-info"><img style="width: 20px; height: 20px;" src="image/add.png" alt="">
+                <a href="<?php echo URL."student/add"; ?>"> <button class="btn btn-info"><img style="width: 20px; height: 20px;" src="image/add.png">
                     Ajouter
-                </button>
+                </button> </a>
             </div>
             <div class="d-flex justify-content-between mt-3 fw-bold">
                 <div class="d-flex">
@@ -72,35 +72,9 @@
                             <td>@mdo</td>
                             <td>@mdo</td>
                             <td>
-                                <a href=""><img style="max-width: 20px;" src="/images/trash.png"></a>
+                                <a href=""><img style="max-width: 20px;" src="image/trash.png"></a>
                                 <a href="">
-                                    <img style="max-width: 20px;" src="/images/edit.png">
-                                </a>
-                            </td>
-                        </tr>
-                        <tr class="">
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                            <td>
-                                <a href=""><img style="max-width: 20px;" src="/images/trash.png"></a>
-                                <a href="">
-                                    <img style="max-width: 20px;" src="/images/edit.png">
-                                </a>
-                            </td>
-                        </tr>
-                        <tr class="">
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                            <td>@jfhhefhehfhehfef</td>
-                            <td>
-                                <a href=""><img style="max-width: 20px;" src="/images/trash.png"></a>
-                                <a href="">
-                                    <img style="max-width: 20px;" src="/images/edit.png">
+                                    <img style="max-width: 20px;" src="image/edit.png">
                                 </a>
                             </td>
                         </tr>
