@@ -31,4 +31,8 @@ abstract class Model{
         $smt = null;
         $db = null;
     }
+
+    protected function update(){
+        
+    }
 }
