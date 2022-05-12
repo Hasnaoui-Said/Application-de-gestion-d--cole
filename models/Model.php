@@ -7,7 +7,7 @@ abstract class Model{
 
     protected function getAll($table){
         $db = self::getBdd();
-        $query = $db->query('SELECT * FROM ' .$table);
+        $query = $db->query('SELECT * FROM ' .$table." WHERE status = 1");
         $data = $query->fetchAll(PDO::FETCH_OBJ);
         $query = null;
         $db = null;
