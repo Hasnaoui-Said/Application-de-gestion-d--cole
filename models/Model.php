@@ -13,4 +13,22 @@ abstract class Model{
         $db = null;
         return $data;
     }
+
+    protected function add($table, $attributs, $valeurs){
+        $db = self::getBdd();
+        if($db == null){
+            return;
+        }
+        $valeurs = array_map(function ($valeur){
+            return "'".$valeur."'";
+        },$valeurs);
+        $attributs = implode(',', $attributs);
+        $valeurs = implode(',', $valeurs);
+        $sql = "INSERT INTO ".$table. '('. $attributs .')'. 'VALUES'. '('. $valeurs .')';
+        echo $sql;
+        $smt = $db->prepare($sql);
+        $smt->execute();
+        $smt = null;
+        $db = null;
+    }
 }
