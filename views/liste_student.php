@@ -24,9 +24,10 @@
         <div class="Container p-4 ">
             <div class="d-flex justify-content-between border-bottom fw-bold fs-4">
                 <p class="">Listes des étudiants</p>
-                <a href="<?php echo URL."student/add"; ?>"> <button class="btn btn-info"><img style="width: 20px; height: 20px;" src="image/add.png">
-                    Ajouter
-                </button> </a>
+                 <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <img style="width: 20px; height: 20px;" src="image/add.png">
+                    <span>Ajouter</span>
+                </button>
             </div>
             <div class="d-flex justify-content-between mt-3 fw-bold">
                 <div class="d-flex">
@@ -82,7 +83,25 @@
                 </table>
             </div>
         </div>
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Understood</button>
+                </div>
+                </div>
+            </div>
+        </div>
     </main>
+
     <script src="js/main.js"></script>
 </body>
 </html>
