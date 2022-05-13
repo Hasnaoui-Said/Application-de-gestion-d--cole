@@ -3,7 +3,6 @@ class ControllerLogin{
 
     public function __construct($url){
         $status = "";
-        require('controllers/session/library.php');
         redirection_admin();
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $username = htmlspecialchars($_POST['username']);

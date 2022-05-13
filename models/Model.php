@@ -7,10 +7,32 @@ abstract class Model{
 
     protected function getAll($table){
         $db = self::getBdd();
-        $query = $db->query('SELECT * FROM ' .$table);
+        $query = $db->query('SELECT * FROM ' .$table." WHERE status = 1");
         $data = $query->fetchAll(PDO::FETCH_OBJ);
         $query = null;
         $db = null;
         return $data;
+    }
+
+    protected function add($table, $attributs, $valeurs){
+        $db = self::getBdd();
+        if($db == null){
+            return;
+        }
+        $valeurs = array_map(function ($valeur){
+            return "'".$valeur."'";
+        },$valeurs);
+        $attributs = implode(',', $attributs);
+        $valeurs = implode(',', $valeurs);
+        $sql = "INSERT INTO ".$table. '('. $attributs .')'. 'VALUES'. '('. $valeurs .')';
+        echo $sql;
+        $smt = $db->prepare($sql);
+        $smt->execute();
+        $smt = null;
+        $db = null;
+    }
+
+    protected function update(){
+        
     }
 }
