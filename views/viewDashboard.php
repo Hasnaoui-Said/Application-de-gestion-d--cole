@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style/dashboard.css">
+    <link rel="stylesheet" href="./app/assets/style/dashboard.css">
 
 </head>
 
@@ -26,7 +26,7 @@
                 <div class="col-xl-3 col-md-6 justify-content-center align-items-center">
                     <div class="item item-1">
                         <div class="d-flex p-2 ps-3 justify-content-start align-items-center gap-3">
-                            <img src="image/svg/student.png" width="35" alt="students">
+                            <img src="./app/image/svg/student.png" width="35" alt="students">
                             <div class="w-100 stu d-flex flex-column justify-content-ceter align-items-center">
                                 <strong class="text-start w-100">Total students</strong>
                                 <p class="text-end  w-100">655</p>
@@ -35,14 +35,14 @@
                         <a href="#"
                             class="view nav-link ms-0 py-2 px-3 d-flex justify-content-between align-items-center w-100">
                             <div class="">View Details</div>
-                            <img src="image/right.svg" width="15" alt="right">
+                            <img src="./app/image/right.svg" width="15" alt="right">
                         </a>
                     </div>
                 </div>
                 <div class="col-xl-3 col-md-6 justify-content-center align-items-center">
                     <div class="item item-2">
                         <div class="d-flex p-2 ps-3 justify-content-start align-items-center gap-3">
-                            <img src="image/svg/family.png" width="35" alt="students">
+                            <img src="./app/image/svg/family.png" width="35" alt="students">
                             <div class="w-100 stu d-flex flex-column justify-content-ceter align-items-center">
                                 <strong class="text-start w-100">Total parents</strong>
                                 <p class="text-end  w-100">566</p>
@@ -51,14 +51,14 @@
                         <a href="#"
                             class="view nav-link ms-0 py-2 px-3 d-flex justify-content-between align-items-center w-100">
                             <div class="">View Details</div>
-                            <img src="image/right.svg" width="15" alt="right">
+                            <img src="./app/image/right.svg" width="15" alt="right">
                         </a>
                     </div>
                 </div>
                 <div class="col-xl-3 col-md-6 justify-content-center align-items-center">
                     <div class="item item-3">
                         <div class="d-flex p-2 ps-3 justify-content-start align-items-center gap-3">
-                            <img src="image/svg/teachers.png" width="35" alt="students">
+                            <img src="./app/image/svg/teachers.png" width="35" alt="students">
                             <div class="w-100 stu d-flex flex-column justify-content-ceter align-items-center">
                                 <strong class="text-start w-100">Total Teachers</strong>
                                 <p class="text-end  w-100">67</p>
@@ -67,14 +67,14 @@
                         <a href="#"
                             class="view nav-link ms-0 py-2 px-3 d-flex justify-content-between align-items-center w-100">
                             <div class="">View Details</div>
-                            <img src="image/right.svg" width="15" alt="right">
+                            <img src="./app/image/right.svg" width="15" alt="right">
                         </a>
                     </div>
                 </div>
                 <div class="col-xl-3 col-md-6 justify-content-center align-items-center">
                     <div class="item item-4">
                         <div class="d-flex p-2 ps-3 justify-content-start align-items-center gap-3">
-                            <img src="image/svg/class.png" width="35" alt="students">
+                            <img src="./app/image/svg/class.png" width="35" alt="students">
                             <div class="w-100 stu d-flex flex-column justify-content-ceter align-items-center">
                                 <strong class="text-start w-100">Total classes</strong>
                                 <p class="text-end  w-100">45</p>
@@ -83,7 +83,7 @@
                         <a href="#"
                             class="view nav-link ms-0 py-2 px-3 d-flex justify-content-between align-items-center w-100">
                             <div class="">View Details</div>
-                            <img src="image/right.svg" width="15" alt="right">
+                            <img src="./app/image/right.svg" width="15" alt="right">
                         </a>
                     </div>
                 </div>
@@ -136,7 +136,7 @@
     <script src="js/main.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="js/chart.js"></script>
+    <script src="./app/assets/js/chart.js"></script>
 </body>
 
 </html>

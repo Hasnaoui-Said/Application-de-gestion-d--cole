@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style/dashboard.css">
-    <link rel="stylesheet" href="style/table.css">
+    <link rel="stylesheet" href="./app/assets/style/dashboard.css">
+    <link rel="stylesheet" href="./app/assets/style/table.css">
 </head>
 <body>
     <?php require("header.php"); ?>
@@ -25,7 +25,7 @@
             <div class="d-flex justify-content-between border-bottom fw-bold fs-4">
                 <p class="">Listes des étudiants</p>
                  <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    <img style="width: 20px; height: 20px;" src="image/add.png">
+                    <img style="width: 20px; height: 20px;" src="./app/image/add.png">
                     <span>Ajouter</span>
                 </button>
             </div>
@@ -73,9 +73,9 @@
                             <td>@mdo</td>
                             <td>@mdo</td>
                             <td>
-                                <a href=""><img style="max-width: 20px;" src="image/trash.png"></a>
+                                <a href=""><img style="max-width: 20px;" src="./app/image/trash.png"></a>
                                 <a href="">
-                                    <img style="max-width: 20px;" src="image/edit.png">
+                                    <img style="max-width: 20px;" src="./app/image/edit.png">
                                 </a>
                             </td>
                         </tr>
