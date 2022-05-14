@@ -11,4 +11,8 @@ class Student extends Model{
     public function updateStudent($matricule, $tableau){
         $this->update('etudiant', $tableau, $matricule);
     }
+
+    public function deleteStudent($matricule){
+        $this->delete('etudiant', $matricule);
+    }
 }

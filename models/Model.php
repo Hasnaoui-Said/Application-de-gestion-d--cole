@@ -48,4 +48,18 @@ abstract class Model{
         $smt = null;
         $db = null;
     }
+
+    protected function delete($table, $matricule){
+        $db = self::getBdd();
+        if($db == null){
+            return;
+        }
+        $sql = "UPDATE ".$table. " SET status = 0 WHERE matricule = :matricule";
+        $smt = $db->prepare($sql);
+        $smt->execute([
+            ":matricule" => $matricule
+        ]);
+        $smt = null;
+        $db = null;
+    }
 }

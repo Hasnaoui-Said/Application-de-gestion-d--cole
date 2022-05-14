@@ -7,11 +7,18 @@ class ControllerStudent{
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
             if($url[1] == "add"){
                 $student->addStudent([...$_POST]);
+                header("Location: ".URL."student");
+                die();
             }else{
                 $student->updateStudent($url[2],$_POST);
                 header("Location: ".URL."student");
                 die();
             }
+        }
+        if($url[1] == "delete"){
+            $student->deleteStudent($url[2]);
+            header("Location: ".URL."student");
+            die();
         }
         $parents = $parent->getParents();
         $liste = $student->getStudents();

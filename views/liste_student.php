@@ -125,7 +125,7 @@
                                     </div>
                                 </div>
                                 </div>
-                                <a href="">
+                                <a href="<?php echo URL."student/delete/".$value->matricule; ?>">
                                     <img style="max-width: 20px;" src="./app/image/trash.png">
                                 </a>
                             </td>
