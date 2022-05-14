@@ -5,7 +5,13 @@ class ControllerStudent{
         $student = new Student();
         $parent = new Parents();
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
-            $student->addStudent([...$_POST]);
+            if($url[1] == "add"){
+                $student->addStudent([...$_POST]);
+            }else{
+                $student->updateStudent($url[2],$_POST);
+                header("Location: ".URL."student");
+                die();
+            }
         }
         $parents = $parent->getParents();
         $liste = $student->getStudents();

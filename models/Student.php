@@ -7,4 +7,8 @@ class Student extends Model{
     public function addStudent($valeurs){
         $this->add('etudiant',['nom','genre','adresse','naissance','email','tuteur'], $valeurs);
     }
+
+    public function updateStudent($matricule, $tableau){
+        $this->update('etudiant', $tableau, $matricule);
+    }
 }

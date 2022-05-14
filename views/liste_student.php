@@ -67,16 +67,66 @@
                     </thead>
                     <tbody>
                         <?php foreach ($liste as $key => $value) {?>
-                        <tr>
-                            <td><?php echo $value->nom; ?></td>
-                            <td><?php echo $value->genre; ?></td>
-                            <td><?php echo $value->adresse; ?></td>
-                            <td><?php echo $value->naissance; ?></td>
-                            <td><?php echo $value->email; ?></td>
-                            <td>
-                                <a href=""><img style="max-width: 20px;" src="./app/image/trash.png"></a>
+                            <tr>
+                                <td><?php echo $value->nom; ?></td>
+                                <td><?php echo $value->genre; ?></td>
+                                <td><?php echo $value->adresse; ?></td>
+                                <td><?php echo $value->naissance; ?></td>
+                                <td><?php echo $value->email; ?></td>
+                                <td>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#m<?php echo $value->matricule; ?>">
+                                        <img style="max-width: 20px;" src="./app/image/edit.png">
+                                    </button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="m<?php echo $value->matricule; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Update Student</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                    <form action="<?php echo URL."student/update/".$value->matricule; ?>" method="POST">
+                                        <div class="mb-3">
+                                            <label for="fullname" class="form-label">Fullname</label>
+                                            <input type="text" class="form-control" id="fullname" name="nom" value="<?php echo $value->nom; ?>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="gender" class="form-label">Gender</label>
+                                            <select id="gender" class="form-control form-control-lg" name="genre">
+                                                <option value="homme" <?php if($value->genre == "homme"){echo "selected";} ?> >homme</option>
+                                                <option value="femme" <?php if($value->genre == "femme"){echo "selected";} ?> >femme</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="adresse" class="form-label">Adresse</label>
+                                            <input type="text" class="form-control" id="adresse" name="adresse" value="<?php echo $value->adresse; ?>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="naissance" class="form-label">Birthday</label>
+                                            <input type="date" class="form-control" id="naissance" name="naissance" value="<?php echo $value->naissance; ?>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">Email</label>
+                                            <input type="text" class="form-control" id="email" name="email" value="<?php echo $value->email; ?>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="parent" class="form-label">Parent</label>
+                                            <select id="parent" class="form-control form-control-lg" name="tuteur">
+                                                <?php foreach ($parents as $key => $val){?>
+                                                <option value="<?php echo $val->matricule; ?>" <?php if($value->tuteur == $val->matricule){echo "selected";} ?> ><?php echo $val->nom; ?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </form>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
                                 <a href="">
-                                    <img style="max-width: 20px;" src="./app/image/edit.png">
+                                    <img style="max-width: 20px;" src="./app/image/trash.png">
                                 </a>
                             </td>
                         </tr>
@@ -93,7 +143,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?php echo URL."student"; ?>" method="POST">
+                    <form action="<?php echo URL."student/add"; ?>" method="POST">
                     <div class="mb-3">
                         <label for="fullname" class="form-label">Fullname</label>
                         <input type="text" class="form-control" id="fullname" name="fullname">
