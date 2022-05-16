@@ -150,7 +150,7 @@
                     <div class="modal-body">
                         <form action="<?php echo URL . "teacher/add" ?>" method="POST">
                             <div class="mb-3">
-                                <label for="fullname" class="form-label">Fullname</label>
+                                <label for="fullname" class="form-label">Fullname:</label>
                                 <input type="text" class="form-control" id="fullname" name="nom">
                             </div>
                             <div class="mb-3">
