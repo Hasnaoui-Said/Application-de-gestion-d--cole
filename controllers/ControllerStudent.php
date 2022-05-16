@@ -21,8 +21,8 @@ class ControllerStudent{
                 header("Location: ".URL."student");
                 die();
             }
+        $parents = $parent->getParents();
         $liste = $student->getStudents();
-        
         $_SESSION['link'] = 'Students';
         require_once(ROOT.'views/liste_student.php');
     }

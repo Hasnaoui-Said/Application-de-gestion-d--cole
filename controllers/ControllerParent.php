@@ -22,6 +22,7 @@ class ControllerParent{
                 die();
             }
         $liste = $parent->getParents();
+        
         $_SESSION['link'] = 'Parents';
         require_once(ROOT.'views/liste_parent.php');
     }
