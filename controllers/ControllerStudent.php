@@ -23,7 +23,6 @@ class ControllerStudent{
             }
         $parents = $parent->getParents();
         $liste = $student->getStudents();
-        
         $_SESSION['link'] = 'Students';
         require_once(ROOT.'views/liste_student.php');
     }
