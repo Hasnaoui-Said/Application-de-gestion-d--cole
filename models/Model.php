@@ -32,7 +32,34 @@ abstract class Model{
         $db = null;
     }
 
-    protected function update(){
-        
+    protected function update($table, $tableau, $matricule){
+        $db = self::getBdd();
+        if($db == null){
+            return;
+        }
+        $attributs = "";
+        foreach ($tableau as $key => $value) {
+            $attributs = $attributs.$key."="."'".$value."',";
+        }
+        $attributs = substr($attributs, 0, -1); 
+        $sql = "UPDATE ".$table. " SET ".$attributs." WHERE matricule = ".$matricule;
+        $smt = $db->prepare($sql);
+        $smt->execute();
+        $smt = null;
+        $db = null;
+    }
+
+    protected function delete($table, $matricule){
+        $db = self::getBdd();
+        if($db == null){
+            return;
+        }
+        $sql = "UPDATE ".$table. " SET status = 0 WHERE matricule = :matricule";
+        $smt = $db->prepare($sql);
+        $smt->execute([
+            ":matricule" => $matricule
+        ]);
+        $smt = null;
+        $db = null;
     }
 }
