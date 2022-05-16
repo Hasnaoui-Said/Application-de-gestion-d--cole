@@ -147,17 +147,17 @@
     <div class="modal-dialog">
         <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Update Parent</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Update Parent.</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
         <form action="<?php echo URL."parent/update/".$value->matricule; ?>" method="POST">
             <div class="mb-3">
-                <label for="fullname" class="form-label">Fullname</label>
+                <label for="fullname" class="form-label">Fullname.</label>
                 <input type="text" class="form-control" id="fullname" name="nom" value="<?php echo $value->nom; ?>">
             </div>
             <div class="mb-3">
-                <label for="gender" class="form-label">Gender</label>
+                <label for="gender" class="form-label">Gender.</label>
                 <select id="gender" class="form-control form-control-lg" name="genre">
                     <option value="homme" <?php if($value->genre == "homme"){echo "selected";} ?> >homme</option>
                     <option value="femme" <?php if($value->genre == "femme"){echo "selected";} ?> >femme</option>
@@ -168,11 +168,11 @@
                 <input type="text" class="form-control" id="job" name="job" value="<?php echo $value->job; ?>">
             </div>
             <div class="mb-3">
-                <label for="adresse" class="form-label">Adresse</label>
+                <label for="adresse" class="form-label">Adresse.</label>
                 <input type="text" class="form-control" id="adresse" name="adresse" value="<?php echo $value->adresse; ?>">
             </div>
             <div class="mb-3">
-                <label for="phone" class="form-label">Phone</label>
+                <label for="phone" class="form-label">Phone.</label>
                 <input type="text" class="form-control" id="phone" name="phone" value="<?php echo $value->phone; ?>">
             </div>
             <div class="mb-3">
