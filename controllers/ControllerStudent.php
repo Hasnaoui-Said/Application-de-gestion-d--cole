@@ -15,13 +15,16 @@ class ControllerStudent{
                 die();
             }
         }
-        if($url[1] == "delete"){
-            $student->deleteStudent($url[2]);
-            header("Location: ".URL."student");
-            die();
-        }
+        if(isset($url[1]))
+            if($url[1] == "delete"){
+                $student->deleteStudent($url[2]);
+                header("Location: ".URL."student");
+                die();
+            }
         $parents = $parent->getParents();
         $liste = $student->getStudents();
+        
+        $_SESSION['link'] = 'Students';
         require_once(ROOT.'views/liste_student.php');
     }
 }

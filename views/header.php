@@ -7,35 +7,45 @@
             </div>
             <nav class="mt-0">
                 <ul class="p-0">
-                    <li class="ms-0 mb-2 me-3 nav-item link__active d-flex justify-content-start align-items-center">
+                    <li class="ms-0 mb-2 me-3 nav-item 
+                    <?php if(isset($_SESSION['link']) && $_SESSION['link'] == 'Dashboard') echo 'link__active' ?> 
+                    d-flex justify-content-start align-items-center">
                         <a title="Dashboard" href="<?php echo URL; ?>"
                             class="nav-link me-2 d-flex justify-content-center align-items-center gap-3">
                             <img src="./app/image/svg/home.png" width="30" alt="Dashboard">
                             <span>Dashboard</span>
                         </a>
                     </li>
-                    <li class="ms-0 mb-2 me-3 nav-item d-flex justify-content-start align-items-center">
+                    <li class="ms-0 mb-2 me-3 nav-item
+                    <?php if(isset($_SESSION['link']) && $_SESSION['link'] == 'Students') echo 'link__active' ?> 
+                     d-flex justify-content-start align-items-center">
                         <a title="Students" href="<?php echo URL."student"; ?>"
                             class="nav-link me-2 d-flex justify-content-center align-items-center gap-3">
                             <img src="./app/image/svg/student.png" width="30" alt="students">
                             <span>Students</span>
                         </a>
                     </li>
-                    <li class="ms-0 mb-2 me-3 nav-item d-flex justify-content-start align-items-center">
+                    <li class="ms-0 mb-2 me-3 nav-item
+                    <?php if(isset($_SESSION['link']) && $_SESSION['link'] == 'Teachers') echo 'link__active' ?> 
+                     d-flex justify-content-start align-items-center">
                         <a title="Teachers" href="<?php echo URL."teacher"; ?>"
                             class="nav-link me-2 d-flex justify-content-center align-items-center gap-3">
                             <img src="./app/image/svg/teachers.png" width="30" alt="teachers">
                             <span>Teachers</span>
                         </a>
                     </li>
-                    <li class="ms-0 mb-2 me-3 nav-item d-flex justify-content-start align-items-center">
+                    <li class="ms-0 mb-2 me-3 nav-item
+                    <?php if(isset($_SESSION['link']) && $_SESSION['link'] == 'Parents') echo 'link__active' ?> 
+                     d-flex justify-content-start align-items-center">
                         <a title="Parents" href="<?php echo URL."parent"; ?>"
                             class="nav-link me-2 d-flex justify-content-center align-items-center gap-3">
                             <img src="./app/image/svg/family.png" width="30" alt="parents">
                             <span>Parents</span>
                         </a>
                     </li>
-                    <li class="ms-0 mb-2 me-3 nav-item d-flex justify-content-start align-items-center">
+                    <li class="ms-0 mb-2 me-3 nav-item
+                    <?php if(isset($_SESSION['link']) && $_SESSION['link'] == 'Classes') echo 'link__active' ?> 
+                     d-flex justify-content-start align-items-center">
                         <a title="Classes" href="<?php echo URL."classe"; ?>"
                             class="nav-link me-2 d-flex justify-content-center align-items-center gap-3">
                             <img src="./app/image/svg/class.png" width="30" alt="Classes">
