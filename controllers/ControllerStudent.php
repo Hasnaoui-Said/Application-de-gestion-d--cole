@@ -4,6 +4,7 @@ class ControllerStudent{
         redirection_login();
         $student = new Student();
         $parent = new Parents();
+        $niveaux = new Classe();
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
             if($url[1] == "add"){
                 $student->addStudent([...$_POST]);
@@ -22,6 +23,7 @@ class ControllerStudent{
                 die();
             }
         $parents = $parent->getParents();
+        $niveaux = $niveaux->getClasses();
         $liste = $student->getStudents();
         $_SESSION['link'] = 'Students';
         require_once(ROOT.'views/liste_student.php');

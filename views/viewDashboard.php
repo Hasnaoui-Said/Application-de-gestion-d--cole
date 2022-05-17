@@ -133,8 +133,7 @@
         </div>
     </main>
 
-    <script src="js/main.js"></script>
-
+    <script src="./app\assets\js\main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./app/assets/js/chart.js"></script>
 </body>

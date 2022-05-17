@@ -58,28 +58,35 @@
                 <table style="overflow: overlay;" class="table table-striped">
                     <thead>
                         <tr class="rounded">
+                            <th scope="col">#</th>
                             <th scope="col">Name</th>
                             <th scope="col">Gender</th>
                             <th scope="col">Address</th>
                             <th scope="col">Birthday</th>
                             <th scope="col">Email</th>
+                            <th scope="col">Parent</th>
+                            <th scope="col">Niveau</th>
+                            <th scope="col" colspan="2">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($liste as $key => $value) {?>
-                            <tr>
-                                <td><?php echo $value->nom; ?></td>
-                                <td><?php echo $value->genre; ?></td>
-                                <td><?php echo $value->adresse; ?></td>
-                                <td><?php echo $value->naissance; ?></td>
-                                <td><?php echo $value->email; ?></td>
-                                <td>
-                                    <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#m<?php echo $value->matricule; ?>">
-                                        <img style="max-width: 20px;" src="./app/image/edit.png">
-                                    </button>
-                                <!-- Modal -->
-                                <div class="modal fade" id="m<?php echo $value->matricule; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <tr>
+                            <th><?php echo $value->etudiant_matr; ?></th>
+                            <td><?php echo $value->nomEtu; ?></td>
+                            <td><?php echo $value->genreEtu; ?></td>
+                            <td><?php echo $value->adresse; ?></td>
+                            <td><?php echo $value->naissance; ?></td>
+                            <td><?php echo $value->email; ?></td>
+                            <td><?php echo $value->nomTu; ?></td>
+                            <td><?php echo $value->title; ?></td>
+                            <td class="">
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-link p-0" data-bs-toggle="modal" data-bs-target="#m<?php echo $value->etudiant_matr; ?>">
+                                    <img style="max-width: 20px;" src="./app/image/edit.png">
+                                </button>
+                            <!-- Modal -->
+                                <div class="modal fade" id="m<?php echo $value->etudiant_matr; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                     <div class="modal-header">
@@ -87,7 +94,7 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                    <form action="<?php echo URL."student/update/".$value->matricule; ?>" method="POST">
+                                    <form action="<?php echo URL."student/update/".$value->etudiant_matr; ?>" method="POST">
                                         <div class="mb-3">
                                             <label for="fullname" class="form-label">Fullname</label>
                                             <input type="text" class="form-control" id="fullname" name="nom" value="<?php echo $value->nom; ?>">
@@ -115,7 +122,21 @@
                                             <label for="parent" class="form-label">Parent</label>
                                             <select id="parent" class="form-control form-control-lg" name="tuteur">
                                                 <?php foreach ($parents as $key => $val){?>
-                                                <option value="<?php echo $val->matricule; ?>" <?php if($value->tuteur == $val->matricule){echo "selected";} ?> ><?php echo $val->nom; ?></option>
+                                                <option value="<?php echo $val->matricule; ?>" 
+                                                <?php if($value->tuteur == $val->matricule){echo "selected";} ?> >
+                                                <?php echo $val->nom; ?>
+                                                </option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="niveau" class="form-label">niveau</label>
+                                            <select id="niveau" class="form-control form-control-lg" name="idNiveau">
+                                                <?php foreach ($niveaux as $key => $val){?>
+                                                <option value="<?php echo $val->matricule; ?>" 
+                                                <?php if($value->idNiveau == $val->matricule){echo "selected";} ?> >
+                                                <?php echo $val->title; ?>
+                                                </option>
                                                 <?php } ?>
                                             </select>
                                         </div>
@@ -125,7 +146,9 @@
                                     </div>
                                 </div>
                                 </div>
-                                <a href="<?php echo URL."student/delete/".$value->matricule; ?>">
+                            </td>
+                            <td class="">
+                                <a href="<?php echo URL."student/delete/".$value->etudiant_matr; ?>">
                                     <img style="max-width: 20px;" src="./app/image/trash.png">
                                 </a>
                             </td>
@@ -183,6 +206,6 @@
         </div>
     </main>
 
-    <script src="js/main.js"></script>
+    <script src="./app\assets\js\main.js"></script>
 </body>
 </html>

@@ -188,8 +188,8 @@
     </main>
 
 
+    <script src="./app\assets\js\main.js"></script>
 
-    <script src="js/main.js"></script>
 </body>
 
 </html>

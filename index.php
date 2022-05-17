@@ -6,3 +6,5 @@ require_once('controllers/Router.php');
 require('controllers/session/library.php');
 $router = new Router();
 $router->routeReq();
+
+die();
