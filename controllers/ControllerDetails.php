@@ -5,15 +5,13 @@ class ControllerDetails extends Model
     {
         redirection_login();
         $details = new Classe();
-        if (isset($url[1])) {
-            $liste = $details->getStuByNiveau($url[1]);
+        if (count($url) == 2 && $url[1] != "") {
+            $listeStudents = $details->getStuByNiveau($url[1]);
+            $listeTeachers = $details->getTeachersByNiveau($url[1]);
             $_SESSION['link'] = 'Classes';
             require_once(ROOT.'views/liste_detals.php');
-        } else {
-            header("Location: " . URL . "Classe");
-            die();
+        }else{
+            throw new Exception("Page introuvable");
         }
-
-
     }
 }

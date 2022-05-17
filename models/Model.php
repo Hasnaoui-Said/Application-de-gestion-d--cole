@@ -2,7 +2,7 @@
 abstract class Model{
 
     protected static function getBdd(){
-        return new PDO('mysql:dbname=db_ecole;host=localhost;port=3306','root','');
+        return new PDO('mysql:dbname=db_ecole;host=localhost;port=3306','root','root');
     }
 
     protected function getAll($table){
