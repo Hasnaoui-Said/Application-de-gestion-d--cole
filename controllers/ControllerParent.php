@@ -4,23 +4,31 @@ class ControllerParent{
         redirection_login();
         $parent = new Parents();
 
-        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+        if(count($url) > 1){
             if($url[1] == "add"){
-                $parent->addParent([...$_POST]);
-                header("Location: ".URL."Parent");
-                die();
-            }else{
-                $parent->updateParent($url[2],$_POST);
-                header("Location: ".URL."Parent");
-                die();
-            }
-        }
-        if(isset($url[1]))
-            if($url[1] == "delete"){
+                if($_SERVER['REQUEST_METHOD'] === 'POST'){
+                    $parent->addParent([...$_POST]);
+                    header("Location: ".URL."Parent");
+                }
+            }else if($url[1] == "update"){
+                if($_SERVER['REQUEST_METHOD'] === 'POST'){
+                    $parent->updateParent($url[2],$_POST);
+                    header("Location: ".URL."Parent");
+                }
+            }else if($url[1] == "delete"){
                 $parent->deleteParent($url[2]);
                 header("Location: ".URL."Parent");
                 die();
             }
+            else{
+                if($url[1] != ''){
+                    throw new Exception('page not found');
+                }else{
+                    header("Location: ".URL."Parent");
+                    die();
+                }
+            }
+        }
         $liste = $parent->getParents();
         
         $_SESSION['link'] = 'Parents';

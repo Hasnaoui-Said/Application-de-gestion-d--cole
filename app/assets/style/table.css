@@ -41,3 +41,7 @@ select{
     height: 28px;
     width: 60px;
 }
+
+table tbody{
+    border: none !important;
+}

@@ -82,6 +82,53 @@
                                     <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#m<?php echo $value->matricule; ?>">
                                         <img style="max-width: 20px;" src="./app/image/edit.png">
                                     </button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="m<?php echo $value->matricule; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Update Parent.</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                        <form action="<?php echo URL."parent/update/".$value->matricule; ?>" method="POST">
+                                            <div class="mb-3">
+                                                <label for="fullname" class="form-label">Fullname.</label>
+                                                <input type="text" class="form-control" id="fullname" name="nom" value="<?php echo $value->nom; ?>">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="gender" class="form-label">Gender.</label>
+                                                <select id="gender" class="form-control form-control-lg" name="genre">
+                                                    <option value="homme" <?php if($value->genre == "homme"){echo "selected";} ?> >homme</option>
+                                                    <option value="femme" <?php if($value->genre == "femme"){echo "selected";} ?> >femme</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="job" class="form-label">Job</label>
+                                                <input type="text" class="form-control" id="job" name="job" value="<?php echo $value->job; ?>">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="adresse" class="form-label">Adresse.</label>
+                                                <input type="text" class="form-control" id="adresse" name="adresse" value="<?php echo $value->adresse; ?>">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="phone" class="form-label">Phone.</label>
+                                                <input type="text" class="form-control" id="phone" name="phone" value="<?php echo $value->phone; ?>">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="adresse" class="form-label">Situation</label>
+                                                <select id="gender" class="form-control form-control-lg" name="situation">
+                                                    <option value="mère" <?php if($value->situation == "mère"){echo "selected";} ?> >mère</option>
+                                                    <option value="père" <?php if($value->situation == "père"){echo "selected";} ?> >père</option>
+                                                </select>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </form>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <!-- Modal -->
                                 </td>
                                 <td>
                                 <a href="<?php echo URL."parent/delete/".$value->matricule; ?>">
@@ -141,55 +188,7 @@
         </div>
     </main>
 
-    
-    <!-- Modal -->
-    <div class="modal fade" id="m<?php echo $value->matricule; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Update Parent.</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-        <form action="<?php echo URL."parent/update/".$value->matricule; ?>" method="POST">
-            <div class="mb-3">
-                <label for="fullname" class="form-label">Fullname.</label>
-                <input type="text" class="form-control" id="fullname" name="nom" value="<?php echo $value->nom; ?>">
-            </div>
-            <div class="mb-3">
-                <label for="gender" class="form-label">Gender.</label>
-                <select id="gender" class="form-control form-control-lg" name="genre">
-                    <option value="homme" <?php if($value->genre == "homme"){echo "selected";} ?> >homme</option>
-                    <option value="femme" <?php if($value->genre == "femme"){echo "selected";} ?> >femme</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label for="job" class="form-label">Job</label>
-                <input type="text" class="form-control" id="job" name="job" value="<?php echo $value->job; ?>">
-            </div>
-            <div class="mb-3">
-                <label for="adresse" class="form-label">Adresse.</label>
-                <input type="text" class="form-control" id="adresse" name="adresse" value="<?php echo $value->adresse; ?>">
-            </div>
-            <div class="mb-3">
-                <label for="phone" class="form-label">Phone.</label>
-                <input type="text" class="form-control" id="phone" name="phone" value="<?php echo $value->phone; ?>">
-            </div>
-            <div class="mb-3">
-                <label for="adresse" class="form-label">Situation</label>
-                <select id="gender" class="form-control form-control-lg" name="situation">
-                    <option value="mère" <?php if($value->situation == "mère"){echo "selected";} ?> >mère</option>
-                    <option value="père" <?php if($value->situation == "père"){echo "selected";} ?> >père</option>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-        </div>
-        </div>
-    </div>
-    </div>
-    <!-- Modal -->
 
-    <script src="js/main.js"></script>
+    <script src="./app\assets\js\main.js"></script>
 </body>
 </html>

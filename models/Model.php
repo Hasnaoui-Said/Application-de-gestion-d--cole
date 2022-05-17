@@ -13,6 +13,7 @@ abstract class Model{
         $db = null;
         return $data;
     }
+   
 
     protected function add($table, $attributs, $valeurs){
         $db = self::getBdd();
