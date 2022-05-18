@@ -198,6 +198,14 @@
                             <?php } ?>
                         </select>
                     </div>
+                    <div class="mb-3">
+                        <label for="parent" class="form-label">Niveau</label>
+                        <select id="parent" class="form-control form-control-lg" name="idNiveau">
+                            <?php foreach ($niveaux as $key => $value){?>
+                            <option value="<?php echo $value->matricule; ?>"><?php echo $value->title; ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
                     <button type="submit" class="btn btn-primary">Add</button>
                     </form>
                 </div>

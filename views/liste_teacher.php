@@ -20,7 +20,7 @@
     <main class="main">
         <div class="Container p-4 ">
             <div class="d-flex justify-content-between align-items-center border-bottom fw-bold fs-4">
-                <p class="">Listes des Parents: </p>
+                <p class="">Listes des Professeurs: </p>
                 <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     <img style="width: 20px; height: 20px;" src="./app/image/add.png">
                     <span>Ajouter</span>
