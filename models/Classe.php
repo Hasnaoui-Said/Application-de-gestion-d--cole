@@ -47,4 +47,8 @@ class Classe extends Model
         $db = null;
         return $data;
     }
+
+    public function addTeacherInClass($valeurs){
+        $this->add('class',['niveau','idPro'], $valeurs);
+    }
 }

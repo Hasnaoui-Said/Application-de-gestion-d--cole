@@ -54,7 +54,36 @@
             </div>
         </div>
         <div class="table-responsive card mt-3 p-2">
-                <h2>Teachers</h2>
+                <div class="d-flex justify-content-between">
+                    <h2>Teachers</h2>
+                     <!-- Button trigger modal -->
+                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add">Add Teacher</button>
+                            <!-- Modal -->
+                                <div class="modal fade" id="add" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Add Teacher into class</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                    <form action="" method="POST">
+                                        <div class="mb-3">
+                                            <label for="proff" class="form-label">Choisir un professeur</label>
+                                            <select id="proff" class="form-control form-control-lg" name="proff">
+                                                <?php foreach ($proff as $key => $value){?>
+                                                <option value="<?php echo $value->matricule; ?>"><?php echo $value->nom; ?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Add</button>
+                                    </form>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                
+                </div>
                 <table style="overflow: overlay;" class="table table-striped">
                     <thead>
                         <tr class="rounded">
