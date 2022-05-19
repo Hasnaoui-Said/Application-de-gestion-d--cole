@@ -2,7 +2,7 @@
 class ControllerParent{
     public function __construct($url){
         redirection_login();
-        $parent = new Parents();
+        $parent = new Parent();
 
         if(count($url) > 1){
             if($url[1] == "add"){

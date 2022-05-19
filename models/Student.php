@@ -37,6 +37,9 @@ class Student extends Model{
     public function updateStudent($matricule, $tableau){
         $this->update('etudiant', $tableau, $matricule);
     }
+    public function searchStudent($text){
+        parrent::search('etudiant', $text);
+    }
 
     public function deleteStudent($matricule){
         $this->delete('etudiant', $matricule);

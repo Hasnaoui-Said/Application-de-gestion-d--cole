@@ -63,4 +63,20 @@ abstract class Model{
         $smt = null;
         $db = null;
     }
+
+    protected function search($table, $text){
+        $db = self::getBdd();
+        if($db == null){
+            return;
+        }
+        $query = $db->query("SELECT * FROM $table WHERE status = 1 and nom like('%:text%')");
+        $smt = $db->prepare($sql);
+        $smt->execute([
+            ":text" => $text
+        ]);
+        $data = $smt->fetchAll(PDO::FETCH_OBJ);
+        $query = null;
+        $db = null;
+        return $data;
+    }
 }
