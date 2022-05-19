@@ -38,7 +38,29 @@ class Student extends Model{
         $this->update('etudiant', $tableau, $matricule);
     }
     public function searchStudent($text){
-        parrent::search('etudiant', $text);
+        $db = parent::getBdd();
+        if($db == null){
+            return;
+        }
+        $query = "SELECT 
+                    etudiant.genre as `genreEtu`,
+                    tuteur.genre as `genreTu`,
+                    etudiant.nom as `nomEtu`,
+                    tuteur.nom as `nomTu`,
+                    tuteur.matricule as `tuteur_matr`,
+                    etudiant.matricule as `etudiant_matr`,
+                    etudiant.*, tuteur.*,
+                    niveau.* FROM etudiant
+                    INNER JOIN niveau ON etudiant.idNiveau = niveau.matricule 
+                    INNER JOIN tuteur ON etudiant.tuteur = tuteur.matricule
+                    WHERE etudiant.status = 1 and (etudiant.nom like('%$text%') OR etudiant.email like('%$text%'))
+                    ";
+        $smt = $db->prepare($query);
+        $smt->execute();
+        $data = $smt->fetchAll(PDO::FETCH_OBJ);
+        $query = null;
+        $db = null;
+        return $data;
     }
 
     public function deleteStudent($matricule){

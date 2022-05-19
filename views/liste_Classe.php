@@ -37,10 +37,10 @@
                     <span>Ajouter</span>
                 </button>
             </div>
-            <div class="row border-2 mt-3 fw-bold ">
-                <div class="col-sm-12 col-md-6 d-flex justify-content-center align-items-center">
+            <div class="d-flex justify-content-between mt-3 fw-bold">
+                <div class="d-flex">
                     <p>Afficher</p>
-                    <select class="rounded mx-2" name="" id="">
+                    <select class="rounded mx-1" name="" id="">
                         <option value="25">25</option>
                         <option value="50">50</option>
                         <option value="75">75</option>
@@ -49,13 +49,15 @@
                     <p>entités</p>
                 </div>
                 <!--  -->
-                <div class="col-sm-12 col-md-6">
+                <div class="">
                     <div class="d-flex justify-content-center align-items-center">
                         <div class="search">
                             <i class="fa fa-search"></i>
-                            <input type="text" class="form-control" placeholder="Search...">
-                            <button class="btn btn-primary">Search</button>
-                        </div>
+                            <form method="POST" action='classe'>
+                                <input type="text" value="<?= $content ?? '' ?>" name="text" class="text form-control" placeholder="Search...">
+                                <button class="btn btn-primary">Search</button>
+                            </form>
+                        </div>  
                     </div>
                 </div>
                 <!--  -->

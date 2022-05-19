@@ -18,10 +18,6 @@ class ControllerStudent{
                     $student->updateStudent($url[2],$_POST);
                     header("Location: ".URL."student");
                     die();
-                }else if($url[1] == "search"){
-                    $liste = $student->searchStudent($_POST['text']);
-                    print_r($liste);
-                    die();
                 }
             }else{
                 if($url[1] == "delete"){
@@ -36,6 +32,12 @@ class ControllerStudent{
                 }
             }
         }
+        if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['text'])){
+            echo '1';
+            $content = $_POST['text'];
+            $liste = $student->searchStudent($_POST['text']);
+        }
+        
         $_SESSION['link'] = 'Students';
         require_once(ROOT.'views/liste_student.php');
     }
