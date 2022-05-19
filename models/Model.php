@@ -63,4 +63,30 @@ abstract class Model{
         $smt = null;
         $db = null;
     }
+
+    protected function search($table, $text){
+        $db = self::getBdd();
+        if($db == null){
+            return;
+        }
+        $query = "SELECT 
+                    etudiant.genre as `genreEtu`,
+                    tuteur.genre as `genreTu`,
+                    etudiant.nom as `nomEtu`,
+                    tuteur.nom as `nomTu`,
+                    tuteur.matricule as `tuteur_matr`,
+                    etudiant.matricule as `etudiant_matr`,
+                    etudiant.*, tuteur.*,
+                    niveau.* FROM etudiant
+                    INNER JOIN niveau ON etudiant.idNiveau = niveau.matricule 
+                    INNER JOIN tuteur ON etudiant.tuteur = tuteur.matricule
+                    WHERE etudiant.status = 1 and (etudiant.nom like('%$text%') OR etudiant.email like('%$text%'))
+                    ";
+        $smt = $db->prepare($query);
+        $smt->execute();
+        $data = $smt->fetchAll(PDO::FETCH_OBJ);
+        $query = null;
+        $db = null;
+        return $data;
+    }
 }

@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./app/assets/style/dashboard.css">
-    <link rel="stylesheet" href="./app/assets/style/table.css">
+    <link rel="stylesheet" href="app/assets/style/dashboard.css">
+    <link rel="stylesheet" href="app/assets/style/table.css">
 </head>
 <body>
     <?php require("header.php"); ?>
@@ -45,8 +45,10 @@
                     <div class="d-flex justify-content-center align-items-center">
                         <div class="search">
                             <i class="fa fa-search"></i>
-                            <input type="text" class="form-control" placeholder="Search...">
-                            <button class="btn btn-primary">Search</button>
+                            <form method="POST" action='student'>
+                                <input type="text" value="<?= $content ?? '' ?>" name="text" class="text form-control" placeholder="Search...">
+                                <button class="btn btn-primary">Search</button>
+                            </form>
                         </div>  
                     </div>
                 </div>
@@ -207,5 +209,30 @@
     </main>
 
     <script src="./app\assets\js\main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script>
+        // $(document).ready(function() {
+        //     let search_content = document.querySelector('.text');
+                
+        //     search_content.addEventListener('keyup',()=> {
+        //         $.ajax({
+        //             type: "POST",
+        //             url: "./student/",
+        //             data:'search='+search_content.value,
+        //             search = +search_content.value,
+                    
+        //         });
+        //     })
+        // });
+        // function checkuserStudent() {
+        //     let search_content = document.querySelector('.text');
+        //     console.log(search_content.value)
+        //     $.ajax({
+        //         type: "POST",
+        //         url: "./student",
+        //         data:'search ='+search_content.value,
+        //     });
+        // }
+    </script>
 </body>
 </html>

@@ -54,4 +54,17 @@ class Classe extends Model
         // die();
         return $data;
     }
+    public function searchNiveau($text){
+        $db = parent::getBdd();
+        if($db == null){
+            return;
+        }
+        $query = "SELECT * FROM niveau WHERE status = 1  and title like('%$text%')";
+        $smt = $db->prepare($query);
+        $smt->execute();
+        $data = $smt->fetchAll(PDO::FETCH_OBJ);
+        $query = null;
+        $db = null;
+        return $data;
+    }
 }

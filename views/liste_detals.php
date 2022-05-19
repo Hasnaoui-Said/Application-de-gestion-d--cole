@@ -15,7 +15,7 @@
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="<?php echo URL."app/assets/style/dashboard.css"; ?>">
-    <link rel="stylesheet" href="<?php echo URL."app/assets/style/table.css" ?>">
+    <link rel="stylesheet" href="<?php echo URL."app/assets/style/table.css"; ?>">
 </head>
 <body>
     <?php require("header.php"); ?>

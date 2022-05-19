@@ -16,8 +16,8 @@ html, body{
 .side__bar{
     background: var(--bg-color-side);
     width: var(--width-side-bar);
-    transition-timing-function: ease-in-out;
-    transition: width .4s;
+    transition-timing-function: ease-out;
+    transition: width .3s;
     height: 100vh;
     top: 0;
     left: 0;
@@ -33,8 +33,8 @@ html, body{
     position: fixed;
     background: var(--bg-color-blanchedalmond);
     border-bottom: var(--main-text-color) .01px solid;
-    transition-timing-function: ease-in-out;
-    transition: width .4s;
+    transition-timing-function: ease-out;
+    transition: width .3s;
     z-index: 8;
 }
 .main{
@@ -42,44 +42,44 @@ html, body{
     top: var(--height-nav-bar);
     left: var(--width-side-bar);
     width: calc(100% - var(--width-side-bar));
-    transition-timing-function: ease-in-out;
-    transition: width .4s;
+    transition-timing-function: ease-out;
+    transition: width .3s;
 }
 
 .side__bar.active{
-    width: 72px;transition-timing-function: ease-in-out;
-    transition: width .4s;
+    width: 72px;transition-timing-function: ease-out;
+    transition: width .3s;
 }
 .side__bar .logo-1{
     display: block;
-    transition-timing-function: ease-in;
-    transition: width .4s;
+    transition-timing-function: ease-out;
+    transition: width .3s;
 }
 .side__bar.active .logo-1{
-        transition-timing-function: ease-in-out;
-        transition: width .4s;
+        transition-timing-function: ease-out;
+        transition: width .3s;
     display: none;
 }
 .side__bar .logo-2{
-    transition-timing-function: ease-in-out;
-    transition: width .4s;
+    transition-timing-function: ease-out;
+    transition: width .3s;
     display: none;
 }
 .side__bar.active .logo-2{
-    transition-timing-function: ease-in-out;
-    transition: width .4s;
+    transition-timing-function: ease-out;
+    transition: width .3s;
     display: flex;
     height: 144px;
 }
 .side__bar.active ul li a span{
-    transition-timing-function: ease-in-out;
-    transition: width .4s;
+    transition-timing-function: ease-out;
+    transition: width .3s;
     display: none;
 }
 .nav__bar.active,
 .main.active{
-    transition-timing-function: ease-in-out;
-    transition: width .4s;
+    transition-timing-function: ease-out;
+    transition: width .3s;
     width: calc(100% - 72px);
     left: 72px;
 }
