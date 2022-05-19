@@ -29,6 +29,7 @@
                     <span>Ajouter</span>
                 </button>
             </div>
+            <?php var_dump($liste) ?>
             <div class="d-flex justify-content-between mt-3 fw-bold">
                 <div class="d-flex">
                     <p>Afficher</p>

@@ -6,11 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./app/assets/style/dashboard.css">
 
 </head>
@@ -32,8 +29,7 @@
                                 <p class="text-end  w-100">655</p>
                             </div>
                         </div>
-                        <a href="#"
-                            class="view nav-link ms-0 py-2 px-3 d-flex justify-content-between align-items-center w-100">
+                        <a href="#" class="view nav-link ms-0 py-2 px-3 d-flex justify-content-between align-items-center w-100">
                             <div class="">View Details</div>
                             <img src="./app/image/right.svg" width="15" alt="right">
                         </a>
@@ -48,8 +44,7 @@
                                 <p class="text-end  w-100">566</p>
                             </div>
                         </div>
-                        <a href="#"
-                            class="view nav-link ms-0 py-2 px-3 d-flex justify-content-between align-items-center w-100">
+                        <a href="#" class="view nav-link ms-0 py-2 px-3 d-flex justify-content-between align-items-center w-100">
                             <div class="">View Details</div>
                             <img src="./app/image/right.svg" width="15" alt="right">
                         </a>
@@ -64,8 +59,7 @@
                                 <p class="text-end  w-100">67</p>
                             </div>
                         </div>
-                        <a href="#"
-                            class="view nav-link ms-0 py-2 px-3 d-flex justify-content-between align-items-center w-100">
+                        <a href="#" class="view nav-link ms-0 py-2 px-3 d-flex justify-content-between align-items-center w-100">
                             <div class="">View Details</div>
                             <img src="./app/image/right.svg" width="15" alt="right">
                         </a>
@@ -80,8 +74,7 @@
                                 <p class="text-end  w-100">45</p>
                             </div>
                         </div>
-                        <a href="#"
-                            class="view nav-link ms-0 py-2 px-3 d-flex justify-content-between align-items-center w-100">
+                        <a href="#" class="view nav-link ms-0 py-2 px-3 d-flex justify-content-between align-items-center w-100">
                             <div class="">View Details</div>
                             <img src="./app/image/right.svg" width="15" alt="right">
                         </a>
@@ -110,7 +103,7 @@
                 <div class="chart-pie col-xl-6 col-md-12">
                     <canvas class="p-4 card" id="myChartStudentsPie" width="50%" height="50%"></canvas>
                 </div>
-                
+
                 <div class="chart-bar col-xl-6 col-md-12">
                     <div class="line">
                         <canvas class="p-4 mb-3 card" id="myChartStudentsLine" width="100%" height="80%"></canvas>
@@ -136,6 +129,36 @@
     <script src="./app\assets\js\main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./app/assets/js/chart.js"></script>
+    <script>
+        // async function getData() {
+        //     let d;
+        //     let data = fetch("./models/Home.php")
+        //         .then((response) => 
+        //              response.json()
+        //              )
+        //         .then((data) => {
+        //             // console.log(data)
+        //             return data
+        //         })
+        //         .catch(err => console.log(err))
+        // }
+
+        // let d = getData();
+        // console.log(d)
+        let ajax = new XMLHttpRequest()
+        ajax.open("GET", './models/Home.php')
+        ajax.onload = function() {
+            if (ajax.status == 200) {
+                data = JSON.parse(ajax.responseText)
+                dealData(data)
+            }
+        }
+        ajax.send()
+
+        function dealData(data) {
+            console.log(data)
+        }
+    </script>
 </body>
 
 </html>
