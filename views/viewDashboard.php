@@ -29,7 +29,7 @@
                                 <p class="text-end  w-100">655</p>
                             </div>
                         </div>
-                        <a href="#" class="view nav-link ms-0 py-2 px-3 d-flex justify-content-between align-items-center w-100">
+                        <a href="student" class="view nav-link ms-0 py-2 px-3 d-flex justify-content-between align-items-center w-100">
                             <div class="">View Details</div>
                             <img src="./app/image/right.svg" width="15" alt="right">
                         </a>
@@ -44,7 +44,7 @@
                                 <p class="text-end  w-100">566</p>
                             </div>
                         </div>
-                        <a href="#" class="view nav-link ms-0 py-2 px-3 d-flex justify-content-between align-items-center w-100">
+                        <a href="parent" class="view nav-link ms-0 py-2 px-3 d-flex justify-content-between align-items-center w-100">
                             <div class="">View Details</div>
                             <img src="./app/image/right.svg" width="15" alt="right">
                         </a>
@@ -59,7 +59,7 @@
                                 <p class="text-end  w-100">67</p>
                             </div>
                         </div>
-                        <a href="#" class="view nav-link ms-0 py-2 px-3 d-flex justify-content-between align-items-center w-100">
+                        <a href="teacher" class="view nav-link ms-0 py-2 px-3 d-flex justify-content-between align-items-center w-100">
                             <div class="">View Details</div>
                             <img src="./app/image/right.svg" width="15" alt="right">
                         </a>
@@ -74,7 +74,7 @@
                                 <p class="text-end  w-100">45</p>
                             </div>
                         </div>
-                        <a href="#" class="view nav-link ms-0 py-2 px-3 d-flex justify-content-between align-items-center w-100">
+                        <a href="classe" class="view nav-link ms-0 py-2 px-3 d-flex justify-content-between align-items-center w-100">
                             <div class="">View Details</div>
                             <img src="./app/image/right.svg" width="15" alt="right">
                         </a>
@@ -130,34 +130,17 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./app/assets/js/chart.js"></script>
     <script>
-        // async function getData() {
-        //     let d;
-        //     let data = fetch("./models/Home.php")
-        //         .then((response) => 
-        //              response.json()
-        //              )
-        //         .then((data) => {
-        //             // console.log(data)
-        //             return data
-        //         })
-        //         .catch(err => console.log(err))
+
+        // let ajax = new XMLHttpRequest()
+        // ajax.open("GET", './models/Home.php')
+        // ajax.onload = function() {
+        //     if (ajax.status == 200) {
+        //         data = JSON.parse(ajax.responseText)
+        //         console.log(data)
+        //         dealData(data)
+        //     }
         // }
-
-        // let d = getData();
-        // console.log(d)
-        let ajax = new XMLHttpRequest()
-        ajax.open("GET", './models/Home.php')
-        ajax.onload = function() {
-            if (ajax.status == 200) {
-                data = JSON.parse(ajax.responseText)
-                dealData(data)
-            }
-        }
-        ajax.send()
-
-        function dealData(data) {
-            console.log(data)
-        }
+        // ajax.send()
     </script>
 </body>
 

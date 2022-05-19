@@ -1,3 +1,18 @@
+alert('hello')
+// fetch("./../../../models/Home.php")
+// .then(response => response.json())
+// .then(data => {
+//     dealData(data)
+// })
+// .catch(err => console.log(err))
+
+// function dealData(data) {
+//     let item = document.querySelectorAll('.item p');
+//     for (let i = 0; i < 4; i++) {
+//         item[i].innerHTML = data.count[i]
+//     }
+//     console.log(data);
+// }
 const myChartStudentsBar = new Chart(
     document.getElementById('myChartStudentsBar'),
     {
