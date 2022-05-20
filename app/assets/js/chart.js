@@ -1,3 +1,20 @@
+console.log('hello')
+fetch("./models/Home.php")
+.then(response => response.json())
+.then(data => {
+    // console.log(data)
+    dealData(data)
+    chart(data);
+})
+.catch(err => console.log('hello',err))
+
+function dealData(data) {
+    let item = document.querySelectorAll('.item p');
+    for (let i = 0; i < 4; i++) {
+        item[i].innerHTML = data.count[i]
+    }
+}
+function chart(data){
 const myChartStudentsBar = new Chart(
     document.getElementById('myChartStudentsBar'),
     {
@@ -9,25 +26,25 @@ const myChartStudentsBar = new Chart(
                     label: 'Administrators',
                     backgroundColor: '#E81400',
                     borderColor: 'white',
-                    data: [2, 1],
+                    data: [data.genre.Admin[0], data.genre.Admin[1]],
                 },
                 {
                     label: 'Students',
                     backgroundColor: '#01AB68',
                     borderColor: 'white',
-                    data: [135, 125],
+                    data: [data.genre.Stu[0], data.genre.Stu[1]],
                 },
                 {
                     label: 'Parents',
                     backgroundColor: '#F3A003',
                     borderColor: 'white',
-                    data: [155, 146],
+                    data: [data.genre.Par[0], data.genre.Par[1]],
                 },
                 {
                     label: 'Teachers',
                     backgroundColor: '#0160F3',
                     borderColor: 'white',
-                    data: [10, 13],
+                    data: [data.genre.Teach[0], data.genre.Teach[1]],
                 },
             ]
         },
@@ -75,25 +92,25 @@ const myChartStudentsLine = new Chart(
                     label: 'Administrators',
                     backgroundColor: '#E81400',
                     borderColor: '#707070',
-                    data: [2, 1],
+                    data: [data.genre.Admin[0], data.genre.Admin[1]],
                 },
                 {
                     label: 'Students',
                     backgroundColor: '#01AB68',
                     borderColor: '#707070',
-                    data: [135, 125],
+                    data: [data.genre.Stu[0], data.genre.Stu[1]],
                 },
                 {
                     label: 'Parents',
                     backgroundColor: '#F3A003', 
                     borderColor: '#707070',
-                    data: [155, 146],
+                    data: [data.genre.Par[0], data.genre.Par[1]],
                 },
                 {
                     label: 'Teachers',
                     backgroundColor: '#0160F3',
                     borderColor: '#707070',
-                    data: [10, 13],
+                    data: [data.genre.Teach[0], data.genre.Teach[1]],
                 },
             ]
         },
@@ -143,7 +160,12 @@ const myChartStudentsPie = new Chart(
             ],
             datasets: [
                 {
-                    data: [3, 301, 265, 23],
+                    data: [
+                        [data.genre.Admin[0] + data.genre.Admin[1]], 
+                        [data.genre.Par[0] + data.genre.Par[1]], 
+                        [data.genre.Stu[0] + data.genre.Stu[1]], 
+                        [data.genre.Teach[0] + data.genre.Teach[1]]
+                    ],
                     backgroundColor: ['#E81400', '#01AB68', '#0160F3', '#F3A003'],
                     borderColor: 'white',
                     // hoverOffset: 4
@@ -172,3 +194,5 @@ const myChartStudentsPie = new Chart(
         }
     }
 );
+
+}

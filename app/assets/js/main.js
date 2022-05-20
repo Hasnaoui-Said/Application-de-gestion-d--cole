@@ -7,3 +7,4 @@ toogle.addEventListener('click', () =>{
     nav__bar.classList.toggle('active');
     main.classList.toggle('active');
 });
+
